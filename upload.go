@@ -46,7 +46,7 @@ func get_songs(base_path string) string {
 	songsString := execute([]string{"/usr/bin/find", base_path, "-name", "*.mp3"})
 	songsString = strings.Trim(songsString, "\r\n\t")
 	songsLocation := strings.Split(songsString, "\n")
-	
+
 	length_of_base := len(base_path)
 	for i := 0; i < len(songsLocation); i++ {
 		songsLocation[i] = songsLocation[i][length_of_base:]
