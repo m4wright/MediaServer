@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+ 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+ 	<link href="http://getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet">
+ 	
+     <title>Upload Song</title>
+</head>
+<body>
+    <div class="container">
+        <form enctype="multipart/form-data" action="http://localhost:8080/upload_file" method="POST">
+            <input type="file" name="uploadfile" />
+            <input type="hidden" name="token" value="{{.}}" />
+            <input type="text" name="artist" /> <br>
+            <input type="submit" value="upload" />
+        </form>
+    </div>
+</body>
+</html>

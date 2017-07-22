@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+ 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+ 	<link href="http://getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet">
+
+     <script src="../static/play.js"></script>
+ 	
+     <title>Play Song</title>
+</head>
+<body ng-app="playSong" ng-controller="playCtrl">
+    <div class="container">
+        <center><h2>Songs</h2></center>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Artist</th>
+                    <th>Song</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="song in songs">
+                    <th><p ng-bind="song.artist"></p></th>
+                    <th><a href="{{song.path}}"  ng-bind="song.name"></p></th>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
