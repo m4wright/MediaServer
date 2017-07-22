@@ -88,8 +88,8 @@ func upload(w http.ResponseWriter, r *http.Request) {
 	if artist == "" {
 		artist = "no_artist"
 	}
-	if !exists("./music" + artist) {
-		err = os.Mkdir("./music/"+artist, 0755)
+	if !exists("./music/" + artist) {
+		err = os.Mkdir("./music/" + artist, 0755)
 		if err != nil {
 			panic(err.Error())
 		}
