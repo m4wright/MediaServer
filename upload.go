@@ -46,7 +46,7 @@ func get_songs(base_path string) string {
 	songsString := execute([]string{"/usr/bin/find", base_path, "-name", "*.mp3"})
 	songsString = strings.Trim(songsString, "\r\n\t")
 	songsLocation := strings.Split(songsString, "\n")
-
+	
 	length_of_base := len(base_path)
 	for i := 0; i < len(songsLocation); i++ {
 		songsLocation[i] = songsLocation[i][length_of_base:]
@@ -65,7 +65,7 @@ func get_songs(base_path string) string {
 
 func get_songs_html(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Content-Type", "application/json")
-	fmt.Fprintf(w, get_songs("/home/mathew/Documents/Go/upload"))
+	fmt.Fprintf(w, get_songs("/home/mathew/go/MediaServer"))
 }
 
 func upload(w http.ResponseWriter, r *http.Request) {
