@@ -16,9 +16,8 @@
         <center>
             <h2><<<.>>></h2><br>
             <h4 ng-bing="current_song"></h4>
+            <audio id="audio" ng-src="{{current_song_path}}" type="audio/mpeg" autoplay controls></audio>
         </center>
-        <audio id="audio" ng-src="{{current_song_path}}" type="audio/mpeg" autoplay controls>
-        </audio>
         <table class="table table-striped">
             <tbody>
                 <tr ng-repeat="song_name in song_names">
