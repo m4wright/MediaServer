@@ -17,7 +17,8 @@ function getSongs($scope) {
 songApp.controller("songCtrl", function($scope) {
     getSongs($scope);
     $scope.play_song = function(song) {
+        console.log("new song name: " + song);
         $scope.current_song_path = $scope.songs[song];
-        console.log("new song: " + $scope.current_song_path);
+        console.log("new song path: " + $scope.current_song_path);
     };
 });
