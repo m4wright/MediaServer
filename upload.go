@@ -5,6 +5,7 @@ import (
 	"io"
 	"net/http"
 	"os"
+	"strings"
 )
 
 func exists(path string) bool {
@@ -55,13 +56,30 @@ func upload(w http.ResponseWriter, r *http.Request) {
 
 	fmt.Fprintf(w, "%v", handler.Header)
 
+	path := "./music/" + artist + "/" + handler.Filename
+
+	indexOfExtension := strings.LastIndexAny(song_with_extension, ".")
+	if indexOfExtension < 0 {
+		panic("Invalid filename")
+	}
+
+	song_name = handler.Filename[:indexOfExtension]
+
+	if songs[artist] == nil {
+		songs[artist] = make(map[string]string)
+	}
+	songs[artist][song_name] = path
+
 	if err != nil {
 		panic(err.Error())
 	}
-	f, err := os.OpenFile("./music/"+artist+"/"+handler.Filename, os.O_WRONLY|os.O_CREATE, 0666)
+	f, err := os.OpenFile(path, os.O_WRONLY|os.O_CREATE, 0666)
 	if err != nil {
 		panic(err.Error())
 	}
-	io.Copy(f, file)
+	err = io.Copy(f, file)
+	if err != nil {
+		panic(err.Error())
+	}
 }
 
