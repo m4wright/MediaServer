@@ -80,10 +80,11 @@ func generate_song_list(base_path string) {
 		songs[artist][song_name] = songsLocation[i]
 	}
 
-	songs_string, err := json.Marshal(songs)
+	json_string, err := json.Marshal(songs)
 	if err != nil {
 		panic(err.Error())
 	}
+	songs_string = json_string
 }
 
 
