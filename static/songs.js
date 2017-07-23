@@ -22,7 +22,7 @@ function nextSong(song_path) {
     for (let i = 0; i < song_names.length; i++) {
         if (song_path.indexOf(songs[song_names[i]].substr(1)) >= 0) {
             console.log("matched. Next: " + songs[song_names[(i + 1) % song_names.length]]);
-            return songs[song_names[(i + 1) % song_names.length]];
+            return song_names[(i + 1) % song_names.length];
         }
     }
     return songs[song_names[0]];
@@ -40,5 +40,6 @@ songApp.controller("songCtrl", function($scope) {
         this.src = $scope.play_song(nextSong(this.src));
         console.log("source: " + this.src);
         this.play();
+        console.log("playing!");
     });
 });
