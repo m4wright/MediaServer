@@ -16,6 +16,7 @@ function getKeys(obj) {
             keys.push(key);
         }
     }
+    console.log(keys);
     return keys;
 }
 
