@@ -105,3 +105,19 @@ func get_artists_request(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Content-Type", "application/json")
 	fmt.Fprintf(w, artists_string)
 }
+
+func get_songs(w http.ResponseWriter, r *http.Request) {
+	w.Header().Set("Content-Type", "application/json")
+	
+	r.ParseForm()
+	artist := r.Form.Get("artist")
+	
+	if len(artist) == 0 {
+		panic("Missing artist")
+	}
+	json_songs, err := json.Marshal(songs[artist])
+	if err != nil {
+		panic(err.Error())
+	}
+	return json_songs
+}
