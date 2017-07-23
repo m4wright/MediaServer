@@ -16,8 +16,8 @@
         <center><h2><<<.>>></h2></center>
         <table class="table table-striped">
             <tbody>
-                <tr ng-repeat="song_name in getKeys(songs)">
-                    <th><a ng-href="http://192.168.0.134:8080/{{songs[song_name]}}" ng-bind="song_name">hi</a></th>
+                <tr ng-repeat="song_name of getKeys(songs)">
+                    <th><a ng-href="http://192.168.0.134:8080/{{songs[song_name]}}" ng-bind="song_name"></a></th>
                     <!--<th><a ng-href="music/{{artist}}/{{song}}" ng-bind="song"></a></th>-->
                 </tr>
             </tbody>
