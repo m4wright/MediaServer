@@ -11,21 +11,13 @@ function getSongs($scope) {
     });
 }
 
-function play_song(song) {
-    $scope.$apply(() => 
-        $scope.current_song_path = $scope.songs[song]);
-}
 
-// songApp.filter("trustUrl", ['$sce', function($sce) {
-//     return function(recordingUrl) {
-//         return $sce.trustAsResourceUrl(recordingUrl);
-//     }
-// }])
+
 
 songApp.controller("songCtrl", function($scope) {
     getSongs($scope);
     $scope.play_song = function(song) {
         $scope.current_song_path = $scope.songs[song];
-        console.log($scope.current_song_path);
+        console.log("new song: " + $scope.current_song_path);
     };
 });
