@@ -6,11 +6,20 @@ function getSongs($scope) {
         $scope.$apply(() => {
             $scope.songs = songs;
             $scope.song_names = Object.keys(songs);
+            $scope.current_song_path = $scope.song_names[0];
         });
     });
+}
+
+function play_song(song) {
+    $scope.$apply(() => 
+        $scope.current_song_path = $scope.songs[song]);
 }
 
 
 songApp.controller("songCtrl", function($scope) {
     getSongs($scope);
+    $scope.play_song = function(song) {
+        $scope.current_song_path = $scope.songs[song];
+    };
 });

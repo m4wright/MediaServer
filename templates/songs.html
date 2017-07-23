@@ -14,10 +14,16 @@
 <body>
     <div class="container">
         <center><h2><<<.>>></h2></center>
+        <audio controls>
+            <source ng-src="{{current_song_path}}" type="audio/mpeg">
+        </audio>
         <table class="table table-striped">
             <tbody>
                 <tr ng-repeat="song_name in song_names">
-                    <th><a ng-href="http://192.168.0.134:8080/{{songs[song_name]}}" ng-bind="song_name"></a></th>
+                    <!--<th><a ng-href="http://192.168.0.134:8080/{{songs[song_name]}}" ng-bind="song_name"></a></th>-->
+                    <th>
+                        <a ng-click="play_song(song)" ng-bind="song_name"></a>
+                    </th>
                 </tr>
             </tbody>
         </table>
