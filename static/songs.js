@@ -30,12 +30,12 @@ songApp.controller("songCtrl", function($scope) {
     getSongs($scope);
     $scope.play_song = function(song) {
         $scope.current_song_path = encodeURI("http://192.168.0.134:8080" + $scope.songs[song].substr(1));
+        return $scope.current_song_path;
     };
     document.getElementById("audio").addEventListener('ended', function() {
         console.log("hi");
-        $scope.play_song(song_names[1]);
-        let audio = this;
-        setTimeout(() => audio.play(), 1000);
-        //this.play();
+        this.src = $scope.play_song(song_names[1]);
+        console.log("source: " + this.src);
+        this.play();
     });
 });
