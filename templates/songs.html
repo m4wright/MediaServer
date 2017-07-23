@@ -14,13 +14,11 @@
 <body>
     <div class="container">
         <center><h2><<<.>>></h2></center>
-        <audio ng-src="{{current_song_path}}" type="audio/mpeg" controls>
-            <!--<source src="http://192.168.0.134:8080/music/Arkells/Never Thought That This Would Happen.mp3" type="audio/mpeg">-->
+        <audio ng-src="{{current_song_path}}" type="audio/mpeg" autoplay loop controls>
         </audio>
         <table class="table table-striped">
             <tbody>
                 <tr ng-repeat="song_name in song_names">
-                    <!--<th><a ng-href="http://192.168.0.134:8080/{{songs[song_name]}}" ng-bind="song_name"></a></th>-->
                     <th>
                         <a href="#" ng-click="play_song(song_name)" ng-bind="song_name"></a>
                     </th>
