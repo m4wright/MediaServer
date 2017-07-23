@@ -14,7 +14,6 @@ func handle_songs(w http.ResponseWriter, r *http.Request) {
 		panic("Missing artist")
 	}
 	artist := split_path[2]
-	fmt.Println("artist: " + artist)
 
 	songsTemplate, err := template.New("songs.html").Delims("<<<", ">>>").ParseFiles("./templates/songs.html")
 	if err != nil {

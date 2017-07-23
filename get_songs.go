@@ -29,7 +29,6 @@ func execute(args []string) string {
 	output, error := cmd.CombinedOutput()
 
 	if error != nil {
-		fmt.Println("Error executing command: " + error.Error())
 		panic(error.Error())
 	}
 
