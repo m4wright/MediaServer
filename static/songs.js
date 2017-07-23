@@ -10,15 +10,14 @@ function getSongs($scope) {
 }
 
 
-function getSongNames($scope) {
-    let song_names = [];
-    for (let song in $scope.songs) {
-        song_names.push($scope.songs[song]);
+function getKeys(obj) {
+    let keys = [];
+    for (let key of obj) {
+        if (obj.hasOwnProperty(key)) {
+            keys.push(key);
+        }
     }
-    console.log(song_names);
-    $scope.$apply(() => {
-        $scope.song_names = song_names;
-    });
+    return keys;
 }
 
 songApp.controller("songCtrl", function($scope) {
