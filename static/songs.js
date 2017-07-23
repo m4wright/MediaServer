@@ -33,9 +33,7 @@ songApp.controller("songCtrl", function($scope) {
         return $scope.current_song_path;
     };
     document.getElementById("audio").addEventListener('ended', function() {
-        console.log("hi");
-        this.src = $scope.play_song(song_names[1]);
-        console.log("source: " + this.src);
+        this.src = $scope.play_song(nextSong(this.src));
         this.play();
     });
 });
