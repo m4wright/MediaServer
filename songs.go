@@ -10,10 +10,10 @@ import (
 func handle_songs(w http.ResponseWriter, r *http.Request) {
 	path := r.URL.Path
 	split_path := strings.Split(path, "/")
-	if len(split_path) < 2 {
+	if len(split_path) < 3 {
 		panic("Missing artist")
 	}
-	artist := split_path[1]
+	artist := split_path[2]
 	fmt.Println("artist: " + artist)
 
 	t, err := template.ParseFiles("./templates/songs.html")
