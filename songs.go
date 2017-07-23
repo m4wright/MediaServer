@@ -9,7 +9,7 @@ import (
 
 func handle_songs(w http.ResponseWriter, r *http.Request) {
 	path := r.URL.Path
-	split_path := strings.Split(path, "/")
+	split_path := strings.Split(path, "/")	
 	if len(split_path) < 3 {
 		panic("Missing artist")
 	}
