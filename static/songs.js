@@ -8,20 +8,11 @@ function getSongs($scope) {
     });
 }
 
-
 function getKeys(obj) {
-    let keys = [];
-    console.log("getKeys called");
-    for (let key of obj) {
-        if (obj.hasOwnProperty(key)) {
-            keys.push(key);
-        }
-    }
-    console.log(keys);
-    return keys;
+    return Object.keys(obj);
 }
 
 songApp.controller("songCtrl", function($scope) {
     getSongs($scope);
-    $scope.getKeys = getKeys;
+    $scope.keys = getKeys;
 });
