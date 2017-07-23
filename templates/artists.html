@@ -15,7 +15,7 @@
         <center><h2>Artists</h2></center>
         <table class="table table-striped">
             <tbody>
-                <tr ng-repeat="artist in artists">
+                <tr ng-repeat="artist in artists | orderBy">
                     <th><a ng-href="songs/{{artist}}" ng-bind="artist"></a></th>
                 </tr>
             </tbody>
