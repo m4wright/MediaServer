@@ -77,7 +77,7 @@ func upload(w http.ResponseWriter, r *http.Request) {
 	if err != nil {
 		panic(err.Error())
 	}
-	err = io.Copy(f, file)
+	_, err := io.Copy(f, file)
 	if err != nil {
 		panic(err.Error())
 	}
