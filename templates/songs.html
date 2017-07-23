@@ -16,7 +16,7 @@
         <center><h2><<<.>>></h2></center>
         <table class="table table-striped">
             <tbody>
-                <tr ng-repeat="song_name in keys(songs)">
+                <tr ng-repeat="song_name in song_names">
                     <th><a ng-href="http://192.168.0.134:8080/{{songs[song_name]}}" ng-bind="song_name"></a></th>
                 </tr>
             </tbody>
