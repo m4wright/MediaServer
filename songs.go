@@ -20,7 +20,6 @@ func handle_songs(w http.ResponseWriter, r *http.Request) {
 	if err != nil {
 		panic(err.Error())
 	}
-	t = Delims("<<<", ">>>")
 
-	t.Execute(w, artist)
+	songsTemplate.Execute(w, artist)
 }
