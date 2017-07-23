@@ -6,7 +6,7 @@ function getSongs($scope) {
         $scope.$apply(() => {
             $scope.songs = songs;
             $scope.song_names = Object.keys(songs);
-            $scope.current_song_path = $scope.song_names[0];
+            $scope.current_song_path = $scope.songs[$scope.song_names[0]];
         });
     });
 }
