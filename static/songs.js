@@ -32,7 +32,9 @@ songApp.controller("songCtrl", function($scope) {
         $scope.current_song_path = encodeURI("http://192.168.0.134:8080" + $scope.songs[song].substr(1));
     };
     document.getElementById("audio").addEventListener('ended', function() {
-        this.src = songs[song_names[1]];
-        this.play();
+        $scope.play_song(song_names[1]);
+        let audio = this;
+        setTimeout(() => audio.play(), 1000);
+        //this.play();
     });
 });
