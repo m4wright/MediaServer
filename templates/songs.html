@@ -13,7 +13,10 @@
 <body ng-app="songApp" ng-controller="songCtrl">
 <body>
     <div class="container">
-        <center><h2><<<.>>> - {{current_song}}</h2></center>
+        <center>
+            <h2><<<.>>></h2><br>
+            <h4 ng-bing="current_song"></h4>
+        </center>
         <audio id="audio" ng-src="{{current_song_path}}" type="audio/mpeg" controls>
         </audio>
         <table class="table table-striped">
