@@ -119,5 +119,5 @@ func get_songs(w http.ResponseWriter, r *http.Request) {
 	if err != nil {
 		panic(err.Error())
 	}
-	return json_songs
+	fmt.Printf(w, json_songs)
 }
