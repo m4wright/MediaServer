@@ -13,11 +13,11 @@
 <body ng-app="songApp" ng-controller="songCtrl">
 <body>
     <div class="container">
-        <center><h2>Artists</h2></center>
+        <center><h2>Songs</h2></center>
         <table class="table table-striped">
             <tbody>
                 <tr ng-repeat="(song_name, path) in songs">
-                    <p ng-bind="song_name"></p>
+                    <p ng-bind="song_name">hi</p>
                     <!--<th><a ng-href="music/{{artist}}/{{song}}" ng-bind="song"></a></th>-->
                 </tr>
             </tbody>
