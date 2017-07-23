@@ -21,5 +21,8 @@ func handle_songs(w http.ResponseWriter, r *http.Request) {
 		panic(err.Error())
 	}
 
-	songsTemplate.Execute(w, artist)
+	err = songsTemplate.Execute(w, artist)
+	if err != nil {
+		panic(err.Error())
+	}
 }
