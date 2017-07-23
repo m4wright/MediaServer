@@ -10,8 +10,9 @@ var path_to_music = "/home/mathew/go/MediaServer/music"
 
 func handleMusic(w http.ResponseWriter, r *http.Request) {
 	// when playing a song, redirect to the actual path of the song
+	fmt.Println("original path: " + r.URL.Path)
 	new_path := path_to_music + r.URL.Path[len("/music/"):]
-	fmt.Println(new_path)
+	fmt.Println("new path: " + new_path)
 	http.ServeFile(w, r, new_path)
 }
 
