@@ -6,6 +6,7 @@ function getSongs($scope) {
         $scope.$apply(() => 
             $scope.songs = songs);
             $scope.song_names = getKeys(songs);
+            console.log("keys: " + $scope.song_names);
     });
 }
 
