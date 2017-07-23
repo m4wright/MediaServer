@@ -22,6 +22,7 @@ func main() {
 	http.HandleFunc("/upload_file", upload)
 	http.HandleFunc("/artists", choose_artist_html)
 	http.HandleFunc("/upload", upload_html)
+	http.HandleFunc("/songs/", handle_songs_html)
 	http.HandleFunc("/get_artists", get_artists_request)
 	http.ListenAndServe(":8080", nil)
 }

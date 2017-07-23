@@ -8,6 +8,6 @@ function getArtists($scope) {
     });
 }
 
-artistApp.controller("playCtrl", function($scope) {
+artistApp.controller("artistCtrl", function($scope) {
     getArtists($scope);
 });
