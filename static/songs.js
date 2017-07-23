@@ -18,7 +18,7 @@ songApp.controller("songCtrl", function($scope) {
     getSongs($scope);
     $scope.play_song = function(song) {
         console.log("new song name: " + song);
-        $scope.current_song_path = $scope.songs[song];
+        $scope.current_song_path = "http://192.168.0.134:8080" + $scope.songs[song].substr(1);
         console.log("new song path: " + $scope.current_song_path);
     };
 });
