@@ -16,10 +16,12 @@ func handle_songs(w http.ResponseWriter, r *http.Request) {
 	artist := split_path[2]
 	fmt.Println("artist: " + artist)
 
+	songsTemplate := template.New("./templates/songs.html")
 	t, err := template.ParseFiles("./templates/songs.html")
 	if err != nil {
 		panic(err.Error())
 	}
+	t = template.Delims("<<<", ">>>")
 
 	t.Execute(w, artist)
 }
