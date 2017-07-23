@@ -12,18 +12,17 @@
 </head>
 <body ng-app="playSong" ng-controller="playCtrl">
     <div class="container">
-        <center><h2>Songs</h2></center>
+        <center><h2>Artists</h2></center>
         <table class="table table-striped">
-            <thead>
+            <!--<thead>
                 <tr>
                     <th>Artist</th>
-                    <th>Song</th>
                 </tr>
-            </thead>
+            </thead>-->
             <tbody>
-                <tr ng-repeat="song in songs">
-                    <th><p ng-bind="song.artist"></p></th>
-                    <th><a href="{{song.path}}"  ng-bind="song.name"></p></th>
+                <tr ng-repeat="artist of artists">
+                    <th><p ng-bind="artist"></p></th>
+                    <!--<th><a href="{{song.path}}"  ng-bind="song.name"></p></th>-->
                 </tr>
             </tbody>
         </table>

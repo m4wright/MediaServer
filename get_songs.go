@@ -18,10 +18,10 @@ var songs map[string](map[string]string)
 	}
 */
 
-var songs_string string 		// a json representation of the songs map
+var artists []string
+// a slice of the artists (essentially the keys of songs)
 
-
-
+var artists_string string
 
 func execute(args []string) string {
 	cmd := exec.Command(args[0], args[1:]...)
@@ -80,11 +80,20 @@ func generate_song_list(base_path string) {
 		songs[artist][song_name] = songsLocation[i]
 	}
 
-	json_string, err := json.Marshal(songs)
+	artists = make([]string, len(songs))
+
+	i := 0
+	for artist, _ := range(songs) {
+		artists[i] = artist
+		i++
+	}
+
+	string_of_artists, err := json.Marshal(artists)
 	if err != nil {
 		panic(err.Error())
 	}
-	songs_string = string(json_string)
+
+	artists_string = string_of_artists
 }
 
 
@@ -92,9 +101,13 @@ func choose_song_html(w http.ResponseWriter, r *http.Request) {
 	http.ServeFile(w, r, "./templates/play.html")
 }
 
-
-func get_songs_html(w http.ResponseWriter, r *http.Request) {
+func get_artists_request(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Content-Type", "application/json")
-	fmt.Fprintf(w, songs_string)
+	fmt.Fprintf(w, artists_string)
 }
+
+// func get_songs_html(w http.ResponseWriter, r *http.Request) {
+// 	w.Header().Set("Content-Type", "application/json")
+// 	fmt.Fprintf(w, songs_string)
+// }
 
