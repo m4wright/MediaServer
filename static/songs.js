@@ -16,6 +16,11 @@ function play_song(song) {
         $scope.current_song_path = $scope.songs[song]);
 }
 
+// songApp.filter("trustUrl", ['$sce', function($sce) {
+//     return function(recordingUrl) {
+//         return $sce.trustAsResourceUrl(recordingUrl);
+//     }
+// }])
 
 songApp.controller("songCtrl", function($scope) {
     getSongs($scope);
