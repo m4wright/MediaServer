@@ -6,7 +6,7 @@ function getSongs($scope) {
         $scope.$apply(() => {
             $scope.songs = songs;
             $scope.song_names = Object.keys(songs);
-            $scope.current_song_path = $scope.songs[$scope.song_names[0]];
+            $scope.current_song_path = "http://192.168.0.134:8080" + $scope.songs[$scope.song_names[0]].substr(1);
         });
     });
 }
