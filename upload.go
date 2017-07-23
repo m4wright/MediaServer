@@ -58,7 +58,7 @@ func upload(w http.ResponseWriter, r *http.Request) {
 
 	path := "./music/" + artist + "/" + handler.Filename
 
-	indexOfExtension := strings.LastIndexAny(song_with_extension, ".")
+	indexOfExtension := strings.LastIndexAny(handler.Filename, ".")
 	if indexOfExtension < 0 {
 		panic("Invalid filename")
 	}
