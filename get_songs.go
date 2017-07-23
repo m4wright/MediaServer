@@ -105,9 +105,3 @@ func get_artists_request(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Content-Type", "application/json")
 	fmt.Fprintf(w, artists_string)
 }
-
-// func get_songs_html(w http.ResponseWriter, r *http.Request) {
-// 	w.Header().Set("Content-Type", "application/json")
-// 	fmt.Fprintf(w, songs_string)
-// }
-
