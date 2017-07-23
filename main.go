@@ -16,7 +16,7 @@ func handleMusic(w http.ResponseWriter, r *http.Request) {
 
 
 func main() {
-	generate_songs(path_to_music)
+	generate_song_list(path_to_music)
 	http.Handle("/static/", http.StripPrefix("/static/", http.FileServer(http.Dir("static"))))
 	http.HandleFunc("/music/", handleMusic)
 	http.HandleFunc("/upload_file", upload)
