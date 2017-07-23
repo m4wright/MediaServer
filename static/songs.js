@@ -18,6 +18,7 @@ function getSongs($scope) {
 function nextSong(song_path) {
     for (let i = 0; i < song_names.length; i++) {
         if (songs[song_names[i]] === song_path) {
+            console.log("matched");
             return (i + 1) % song_names.length;
         }
     }
