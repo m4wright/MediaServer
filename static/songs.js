@@ -19,10 +19,10 @@ function nextSong(song_path) {
     for (let i = 0; i < song_names.length; i++) {
         if (songs[song_names[i]] === song_path) {
             console.log("matched");
-            return (i + 1) % song_names.length;
+            return songs[song_names[(i + 1) % song_names.length]];
         }
     }
-    return 0;
+    return songs[song_names[0]];
 }
 
 
@@ -33,6 +33,7 @@ songApp.controller("songCtrl", function($scope) {
     };
     var audio = document.getElementById("audio");
     audio.addEventListener('ended', function() {
+        console.log("ended");
         $scope.play_song(nextSong(audio.src));
     });
 });
