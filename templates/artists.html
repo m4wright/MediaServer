@@ -6,23 +6,17 @@
  	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
  	<link href="http://getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet">
 
-     <script src="./static/play.js"></script>
+     <script src="./static/artists.js"></script>
  	
      <title>Artists</title>
 </head>
-<body ng-app="playSong" ng-controller="playCtrl">
+<body ng-app="artistApp" ng-controller="playCtrl">
     <div class="container">
         <center><h2>Artists</h2></center>
         <table class="table table-striped">
-            <!--<thead>
-                <tr>
-                    <th>Artist</th>
-                </tr>
-            </thead>-->
             <tbody>
                 <tr ng-repeat="artist in artists">
                     <th><p ng-bind="artist"></p></th>
-                    <!--<th><a href="{{song.path}}"  ng-bind="song.name"></p></th>-->
                 </tr>
             </tbody>
         </table>

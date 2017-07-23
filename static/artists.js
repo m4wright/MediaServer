@@ -1,4 +1,4 @@
-var songApp = angular.module("playSong", []);
+var artistApp = angular.module("artistApp", []);
 
 
 function getArtists($scope) {

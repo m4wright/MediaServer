@@ -97,8 +97,8 @@ func generate_song_list(base_path string) {
 }
 
 
-func choose_song_html(w http.ResponseWriter, r *http.Request) {
-	http.ServeFile(w, r, "./templates/play.html")
+func choose_artist_html(w http.ResponseWriter, r *http.Request) {
+	http.ServeFile(w, r, "./templates/artists.html")
 }
 
 func get_artists_request(w http.ResponseWriter, r *http.Request) {

@@ -20,7 +20,7 @@ func main() {
 	http.Handle("/static/", http.StripPrefix("/static/", http.FileServer(http.Dir("static"))))
 	http.HandleFunc("/music/", handleMusic)
 	http.HandleFunc("/upload_file", upload)
-	http.HandleFunc("/songs", choose_song_html)
+	http.HandleFunc("/artists", choose_artist_html)
 	http.HandleFunc("/upload", upload_html)
 	http.HandleFunc("/get_artists", get_artists_request)
 	http.ListenAndServe(":8080", nil)
