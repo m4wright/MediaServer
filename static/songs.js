@@ -21,7 +21,7 @@ function nextSong(song_path) {
     console.log("other: " + songs[song_names[0]]);
     for (let i = 0; i < song_names.length; i++) {
         if (song_path.indexOf(songs[song_names[i]].substr(1)) >= 0) {
-            console.log("matched");
+            console.log("matched. Next: " + songs[song_names[(i + 1) % song_names.length]]);
             return songs[song_names[(i + 1) % song_names.length]];
         }
     }
