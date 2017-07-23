@@ -17,7 +17,7 @@ function getSongs($scope) {
 
 function nextSong(song_path) {
     for (let i = 0; i < song_names.length; i++) {
-        if (songs[song_names[i]] === song_path) {
+        if (songs[song_names[i]].indexOf(song_path.substr(1)) >= 0) {
             console.log("matched");
             return songs[song_names[(i + 1) % song_names.length]];
         }
@@ -34,6 +34,7 @@ songApp.controller("songCtrl", function($scope) {
     };
     document.getElementById("audio").addEventListener('ended', function() {
         this.src = $scope.play_song(nextSong(this.src));
+        console.log("source: " + this.src);
         this.play();
     });
 });
