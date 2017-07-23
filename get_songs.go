@@ -93,7 +93,7 @@ func generate_song_list(base_path string) {
 		panic(err.Error())
 	}
 
-	artists_string = string_of_artists
+	artists_string = string(string_of_artists)
 }
 
 
