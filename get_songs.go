@@ -53,6 +53,6 @@ func get_songs(base_path string) string {
 func get_songs_html(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Content-Type", "application/json")
 	//fmt.Fprintf(w, get_songs("/home/mathew/Documents/Go/upload"))
-	fmt.Fprintf(w, get_songs("/home/mathew/go/MediaServer")
+	fmt.Fprintf(w, get_songs("/home/mathew/go/MediaServer"))
 }
 
