@@ -1,13 +1,13 @@
 var songApp = angular.module("playSong", []);
 
 
-function getSongs($scope) {
-    $.get("get_artists", (songs, error) => {
+function getArtists($scope) {
+    $.get("get_artists", (artists, error) => {
         $scope.$apply(() => 
-            $scope.songs = songs);
+            $scope.artists = artists);
     });
 }
 
 songApp.controller("playCtrl", function($scope) {
-    getSongs($scope);
+    getArtists($scope);
 });
