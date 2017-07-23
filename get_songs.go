@@ -84,7 +84,7 @@ func generate_song_list(base_path string) {
 	if err != nil {
 		panic(err.Error())
 	}
-	songs_string = json_string
+	songs_string = string(json_string)
 }
 
 
