@@ -4,7 +4,6 @@ import (
 	"net/http"
 	"html/template"
 	"strings"
-	"fmt"
 )
 
 func handle_songs(w http.ResponseWriter, r *http.Request) {
