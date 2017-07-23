@@ -36,7 +36,8 @@ func get_songs(base_path string) string {
 
 	length_of_base := len(base_path)
 	for i := 0; i < len(songsLocation); i++ {
-		songsLocation[i] = songsLocation[i][length_of_base:]
+		songsLocation[i] = "music/" + songsLocation[i][length_of_base:]
+		fmt.Println(songsLocation[i])
 	}
 
 	songsEncoding, err := json.Marshal(songsLocation)
@@ -52,7 +53,7 @@ func get_songs(base_path string) string {
 
 func get_songs_html(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Content-Type", "application/json")
-	//fmt.Fprintf(w, get_songs("/home/mathew/Documents/Go/upload"))
-	fmt.Fprintf(w, get_songs("/home/mathew/go/MediaServer")
+	//fmt.Fprintf(w, get_songs("/home/mathew/Documents/Go/upload/music"))
+	fmt.Fprintf(w, get_songs("/home/mathew/go/MediaServer/music"))
 }
 
