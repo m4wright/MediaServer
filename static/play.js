@@ -10,4 +10,5 @@ function getArtists($scope) {
 
 songApp.controller("playCtrl", function($scope) {
     getArtists($scope);
+    console.log("artists: " + $scope.artists);
 });
