@@ -21,5 +21,6 @@ songApp.controller("songCtrl", function($scope) {
     getSongs($scope);
     $scope.play_song = function(song) {
         $scope.current_song_path = $scope.songs[song];
+        console.log($scope.current_song_path);
     };
 });
