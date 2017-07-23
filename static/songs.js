@@ -31,9 +31,8 @@ songApp.controller("songCtrl", function($scope) {
     $scope.play_song = function(song) {
         $scope.current_song_path = encodeURI("http://192.168.0.134:8080" + $scope.songs[song].substr(1));
     };
-    var audio = document.getElementById("audio");
-    audio.addEventListener('ended', function() {
-        console.log("ended");
-        $scope.play_song(nextSong(audio.src));
+    document.getElementById("audio").addEventListener('ended', function() {
+        this.src = songs[song_names[1]];
+        this.play();
     });
 });
