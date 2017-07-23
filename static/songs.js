@@ -23,6 +23,5 @@ function getKeys(obj) {
 
 songApp.controller("songCtrl", function($scope) {
     getSongs($scope);
-    $scope.$apply(() => 
-        $scope.getKeys = getKeys);
+    $scope.getKeys = getKeys;
 });
