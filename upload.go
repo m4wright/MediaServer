@@ -63,7 +63,7 @@ func upload(w http.ResponseWriter, r *http.Request) {
 		panic("Invalid filename")
 	}
 
-	song_name = handler.Filename[:indexOfExtension]
+	song_name := handler.Filename[:indexOfExtension]
 
 	if songs[artist] == nil {
 		songs[artist] = make(map[string]string)
