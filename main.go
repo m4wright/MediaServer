@@ -2,6 +2,7 @@ package main
 
 import (
 	"net/http"
+	"fmt"
 )
 
 var path_to_music = "/home/mathew/go/MediaServer/music"
