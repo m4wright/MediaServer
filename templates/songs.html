@@ -16,8 +16,8 @@
         <center><h2>Artists</h2></center>
         <table class="table table-striped">
             <tbody>
-                <tr ng-repeat="song in songs track by $index">
-                    <p ng-bind="song"></p>
+                <tr ng-repeat="(song_name, path) in songs">
+                    <p ng-bind="song_name"></p>
                     <!--<th><a ng-href="music/{{artist}}/{{song}}" ng-bind="song"></a></th>-->
                 </tr>
             </tbody>
