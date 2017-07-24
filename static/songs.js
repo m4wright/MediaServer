@@ -32,8 +32,8 @@ function nextSong(song_path) {
 songApp.controller("songCtrl", function($scope) {
     getSongs($scope);
     $scope.play_song = function(song) {
-        $scope.current_song = song;
-        console.log($scope.current_song);
+        $scope.$apply(() =>
+            $scope.current_song = song);
         $scope.current_song_path = encodeURI(url + $scope.songs[song].substr(1));
         return $scope.current_song_path;
     };
