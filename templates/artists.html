@@ -23,7 +23,7 @@
         <center><h2>Artists</h2></center>
         <div class="row" ng-repeat="artist in artists">
             <div class="col-md-12">
-                <h2 ng-bind="artist"></h2>
+                <h2><a ng-href="songs/{{artist}}" ng-bind="artist"></a></h2>
             </div>
         </div>
 
