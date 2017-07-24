@@ -21,7 +21,14 @@
     </nav>
     <div class="container">
         <center><h2>Artists</h2></center>
-        <div class="table-responsive">
+        <div ng-for="artist in artists" class="row">
+            <div class="col-md-12">
+                <h2 ng-bind="artist"></h2>
+            </div>
+        </div> 
+
+
+        <!--<div class="table-responsive">
             <table class="table table-striped">
                 <tbody>
                     <tr ng-repeat="artist in artists | orderBy">
@@ -29,7 +36,7 @@
                     </tr>
                 </tbody>
             </table>
-        </div>
+        </div>-->
     </div>
 </body>
 </html>
