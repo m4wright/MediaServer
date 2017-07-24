@@ -15,7 +15,7 @@
     <div class="container">
         <center>
             <h2><<<.>>></h2><br>
-            <p ng-bing="artist"></p>
+            <p ng-bind="current_song"></p>
             <audio id="audio" ng-src="{{current_song_path}}" type="audio/mpeg" autoplay controls></audio>
         </center>
         <table class="table table-striped">
@@ -23,7 +23,6 @@
                 <tr ng-repeat="song_name in song_names">
                     <th>
                         <a href="" ng-click="play_song(song_name)" ng-bind="song_name"></a>
-                        <p ng-bing="artist"></p>
                     </th>
                 </tr>
             </tbody>
