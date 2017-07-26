@@ -79,6 +79,10 @@ func generate_song_list(base_path string) {
 		songs[artist][song_name] = songsLocation[i]
 	}
 
+	update_artists_list()
+}
+
+func update_artists_list() {
 	artists = make([]string, len(songs))
 
 	i := 0

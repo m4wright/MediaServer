@@ -68,11 +68,10 @@ func upload(w http.ResponseWriter, r *http.Request) {
 	if songs[artist] == nil {
 		songs[artist] = make(map[string]string)
 	}
+
 	songs[artist][song_name] = path
 
-	if err != nil {
-		panic(err.Error())
-	}
+
 	f, err := os.OpenFile(path, os.O_WRONLY|os.O_CREATE, 0666)
 	if err != nil {
 		panic(err.Error())
@@ -81,5 +80,7 @@ func upload(w http.ResponseWriter, r *http.Request) {
 	if err != nil {
 		panic(err.Error())
 	}
+
+	update_artists_list()
 }
 
